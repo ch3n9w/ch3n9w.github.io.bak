@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ch4ser||自闭室</title>
+  <icon>http://www.ch4ser.top/icon.png</icon>
+  <subtitle>(´・ω・｀)你瞅啥呢</subtitle>
+  <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
+  
+  <link href="http://www.ch4ser.top/"/>
+  <updated>2021-10-16T06:15:40.100Z</updated>
+  <id>http://www.ch4ser.top/</id>
+  
+  <author>
+    <name>ch4ser</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql jdbc反序列化的不深入研究</title>
+    <link href="http://www.ch4ser.top/2021/10/15/jdbc-unserialize/"/>
+    <id>http://www.ch4ser.top/2021/10/15/jdbc-unserialize/</id>
+    <published>2021-10-15T13:46:28.000Z</published>
+    <updated>2021-10-16T06:15:40.100Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我终于更新博客了……   &lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用idea开启Servlet</title>
+    <link href="http://www.ch4ser.top/2020/10/01/IDEA-Start-Servlet/"/>
+    <id>http://www.ch4ser.top/2020/10/01/IDEA-Start-Servlet/</id>
+    <published>2020-10-01T14:10:28.000Z</published>
+    <updated>2021-10-16T06:14:14.311Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;采用的是版本较新的idea2020.2, 使用的操作系统为&lt;code&gt;MANJARO LINUX&lt;/code&gt;, 其中的过程挺迷迷糊糊的就水一篇来记录一下. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发" scheme="http://www.ch4ser.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GACTF2020</title>
+    <link href="http://www.ch4ser.top/2020/08/29/GACTF2020/"/>
+    <id>http://www.ch4ser.top/2020/08/29/GACTF2020/</id>
+    <published>2020-08-29T07:49:36.000Z</published>
+    <updated>2021-10-16T06:11:54.258Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;simpleflask&quot;&gt;&lt;a href=&quot;#simpleflask&quot; class=&quot;headerlink&quot; title=&quot;simpleflask&quot;&gt;&lt;/a&gt;simpleflask&lt;/h2&gt;&lt;p&gt;和以往的flask不一样的地方在于, 这里是经过更新后的flask, 计算pin码的方式已经和以前不一样了, 参考 &lt;a href=&quot;https://www.chainnews.com/articles/898433701852.htm&quot;&gt;https://www.chainnews.com/articles/898433701852.htm&lt;/a&gt;, 不过问题不大,就把machine-id拼接在docker那一串东西的前面就可以了, 需要注意的是每十分钟重启时候的机器mac地址是会变化的.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>qwb2020web复现</title>
+    <link href="http://www.ch4ser.top/2020/08/27/qwb2020-web-1/"/>
+    <id>http://www.ch4ser.top/2020/08/27/qwb2020-web-1/</id>
+    <published>2020-08-27T12:48:12.000Z</published>
+    <updated>2021-10-16T06:20:26.965Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ch4ser.top/20200827204917.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>http请求走私笔记</title>
+    <link href="http://www.ch4ser.top/2020/08/24/http-smuggling/"/>
+    <id>http://www.ch4ser.top/2020/08/24/http-smuggling/</id>
+    <published>2020-08-24T14:22:46.000Z</published>
+    <updated>2021-10-16T06:13:43.331Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;正常的请求&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ch4ser.top/20200824225013.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ciscn2020_online</title>
+    <link href="http://www.ch4ser.top/2020/08/20/ciscn2020-online/"/>
+    <id>http://www.ch4ser.top/2020/08/20/ciscn2020-online/</id>
+    <published>2020-08-20T05:16:50.000Z</published>
+    <updated>2021-10-16T06:07:55.747Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;web越來越没有牌面了…国赛果然是pwn和misc的天下&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网鼎杯2020 web</title>
+    <link href="http://www.ch4ser.top/2020/05/11/%E7%BD%91%E9%BC%8E%E6%9D%AF2020/"/>
+    <id>http://www.ch4ser.top/2020/05/11/%E7%BD%91%E9%BC%8E%E6%9D%AF2020/</id>
+    <published>2020-05-11T08:11:31.000Z</published>
+    <updated>2021-10-16T06:22:17.978Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ch4ser.top/20200818182958.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>padding_oracle 和 cbc字节反转</title>
+    <link href="http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/"/>
+    <id>http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/</id>
+    <published>2020-02-03T08:42:20.000Z</published>
+    <updated>2021-10-16T06:18:26.890Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;padding oracle 原理: &lt;a href=&quot;https://www.freebuf.com/articles/database/150606.html&quot;&gt;https://www.freebuf.com/articles/database/150606.html&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习笔记</title>
+    <link href="http://www.ch4ser.top/2020/01/28/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.ch4ser.top/2020/01/28/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-01-28T10:48:34.000Z</published>
+    <updated>2021-10-16T06:11:36.532Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Django学习的个人笔记&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="开发" scheme="http://www.ch4ser.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>临行前夜--2019</title>
+    <link href="http://www.ch4ser.top/2020/01/08/note-before-back/"/>
+    <id>http://www.ch4ser.top/2020/01/08/note-before-back/</id>
+    <published>2020-01-07T21:29:24.000Z</published>
+    <updated>2021-10-16T06:17:28.207Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;昨晚约好的车今天早上竟然被司机一声不吭取消了, 真的无语……得亏睡得浅起床看了一眼.新约的车又要早早开往机场, 于是无奈起了个大早. 到达后又被通知延误, 也不知和离开时候的飞雪有无关系, 但不管怎样, 孤身顶着鹅毛行走路上, 这样离开倒还是别有风味, 于是也有了碎碎念的兴致.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="碎碎念" scheme="http://www.ch4ser.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java_web题目复现记录</title>
+    <link href="http://www.ch4ser.top/2020/01/03/java-web/"/>
+    <id>http://www.ch4ser.top/2020/01/03/java-web/</id>
+    <published>2020-01-03T02:57:44.000Z</published>
+    <updated>2021-10-16T06:14:50.654Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;开一个新坑~~&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LD_PRELOAD劫持类型题目</title>
+    <link href="http://www.ch4ser.top/2019/12/26/LD-PRELOAD%E5%8A%AB%E6%8C%81%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/"/>
+    <id>http://www.ch4ser.top/2019/12/26/LD-PRELOAD%E5%8A%AB%E6%8C%81%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/</id>
+    <published>2019-12-26T08:37:19.000Z</published>
+    <updated>2021-10-16T06:16:20.614Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;贴几个参考链接&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/wfzWebSecuity/p/11213732.html&quot;&gt;https://www.cnblogs.com/wfzWebSecuity/p/11213732.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/yangyangwithgnu/bypass_disablefunc_via_LD_PRELOAD&quot;&gt;https://github.com/yangyangwithgnu/bypass_disablefunc_via_LD_PRELOAD&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>copperstudy-record</title>
+    <link href="http://www.ch4ser.top/2019/12/19/qwb-copperstudy-record/"/>
+    <id>http://www.ch4ser.top/2019/12/19/qwb-copperstudy-record/</id>
+    <published>2019-12-19T12:51:05.000Z</published>
+    <updated>2021-10-16T06:19:33.619Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;强网杯-2019-copperstudy&quot;&gt;&lt;a href=&quot;#强网杯-2019-copperstudy&quot; class=&quot;headerlink&quot; title=&quot;强网杯 2019 copperstudy&quot;&gt;&lt;/a&gt;强网杯 2019 copperstudy&lt;/h2&gt;&lt;p&gt;拖拖拉拉终于把这题复现了…&lt;/p&gt;
+&lt;p&gt;开局计算哈希, 爆破爆破&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs相关</title>
+    <link href="http://www.ch4ser.top/2019/11/17/javascript-learn/"/>
+    <id>http://www.ch4ser.top/2019/11/17/javascript-learn/</id>
+    <published>2019-11-17T08:15:38.000Z</published>
+    <updated>2021-10-16T06:15:26.604Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;不会javascript, 在看smi1e师傅关于原型链污染攻击的博客时候, 这张图片让我思考了很久&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>RoarCTF 2019复现</title>
+    <link href="http://www.ch4ser.top/2019/10/22/RoarCTFwp/"/>
+    <id>http://www.ch4ser.top/2019/10/22/RoarCTFwp/</id>
+    <published>2019-10-22T00:32:09.000Z</published>
+    <updated>2021-10-16T06:20:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ch4ser.top/20200818194513.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>bytectf2019</title>
+    <link href="http://www.ch4ser.top/2019/09/09/bytectf2019/"/>
+    <id>http://www.ch4ser.top/2019/09/09/bytectf2019/</id>
+    <published>2019-09-09T00:18:25.000Z</published>
+    <updated>2021-10-16T06:06:26.204Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://article-fd.zol-img.com.cn/t_s640x2000/g2/M00/0C/01/ChMlWl1ag4CIBNZyAAHwY4sTdCQAAMptgEg0FsAAfB7435.jpg&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php session反序列化</title>
+    <link href="http://www.ch4ser.top/2019/09/02/php%E7%9A%84%E4%B8%A4%E7%B1%BB%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://www.ch4ser.top/2019/09/02/php%E7%9A%84%E4%B8%A4%E7%B1%BB%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</id>
+    <published>2019-09-02T05:40:59.000Z</published>
+    <updated>2021-10-16T06:19:15.469Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;php中的反序列化分为两类: 一种是常规ctf题目中的直接传入并反序列化, 另一种和session有关:&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>openssl笔记</title>
+    <link href="http://www.ch4ser.top/2019/09/01/openssl%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.ch4ser.top/2019/09/01/openssl%E7%AC%94%E8%AE%B0/</id>
+    <published>2019-09-01T07:23:10.000Z</published>
+    <updated>2021-10-16T06:17:56.236Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;信息提取&quot;&gt;&lt;a href=&quot;#信息提取&quot; class=&quot;headerlink&quot; title=&quot;信息提取&quot;&gt;&lt;/a&gt;信息提取&lt;/h2&gt;&lt;p&gt;生成一个包含密钥和公钥的文件,既可以用来加密也可以用来解密.&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;openssl genrsa -out target.key 1024&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;从这个包含公钥和私钥的文件中提取出公钥&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;openssl rsa -in target.key -pubout -out target_pub.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Google_Game</title>
+    <link href="http://www.ch4ser.top/2019/06/12/Google-Game/"/>
+    <id>http://www.ch4ser.top/2019/06/12/Google-Game/</id>
+    <published>2019-06-12T11:41:56.000Z</published>
+    <updated>2021-10-16T06:12:12.911Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Google-Xss-game&quot;&gt;&lt;a href=&quot;#Google-Xss-game&quot; class=&quot;headerlink&quot; title=&quot;Google Xss game&quot;&gt;&lt;/a&gt;Google Xss game&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2019 DDCTF web </title>
+    <link href="http://www.ch4ser.top/2019/05/11/2019-DDCTF-web/"/>
+    <id>http://www.ch4ser.top/2019/05/11/2019-DDCTF-web/</id>
+    <published>2019-05-11T05:58:05.000Z</published>
+    <updated>2021-10-16T06:22:19.878Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://ch4ser.top/57f413fa-a730-4c47-916a-3b3cbfc5fc63.png6921654193029151238.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
+  
+</feed>

