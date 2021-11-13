@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-10-22T09:20:39.229Z</updated>
+  <updated>2021-11-13T09:22:22.190Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GhostCat(CVE-2020-1938)漏洞学习</title>
+    <link href="http://www.ch4ser.top/2021/11/13/GhostCat/"/>
+    <id>http://www.ch4ser.top/2021/11/13/GhostCat/</id>
+    <published>2021-11-13T05:14:29.000Z</published>
+    <updated>2021-11-13T09:22:22.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要参考 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>wayland_mode</title>
     <link href="http://www.ch4ser.top/2021/10/22/wayland-mode/"/>
     <id>http://www.ch4ser.top/2021/10/22/wayland-mode/</id>
     <published>2021-10-22T09:04:51.000Z</published>
-    <updated>2021-10-22T09:20:39.229Z</updated>
+    <updated>2021-10-25T13:47:04.199Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录切换到wayland时候的必要操作和个人体验&lt;/p&gt;
@@ -350,23 +374,6 @@
     
     
     <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google_Game</title>
-    <link href="http://www.ch4ser.top/2019/06/12/Google-Game/"/>
-    <id>http://www.ch4ser.top/2019/06/12/Google-Game/</id>
-    <published>2019-06-12T11:41:56.000Z</published>
-    <updated>2021-10-16T06:12:12.911Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Google-Xss-game&quot;&gt;&lt;a href=&quot;#Google-Xss-game&quot; class=&quot;headerlink&quot; title=&quot;Google Xss game&quot;&gt;&lt;/a&gt;Google Xss game&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
     
     
   </entry>

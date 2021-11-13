@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://www.ch4ser.top/images/wayland-mode/image-20211022171916931.png">
 <meta property="article:published_time" content="2021-10-22T09:04:51.000Z">
-<meta property="article:modified_time" content="2021-10-22T09:20:39.229Z">
+<meta property="article:modified_time" content="2021-10-25T13:47:04.199Z">
 <meta property="article:author" content="ch4ser">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.ch4ser.top/images/wayland-mode/image-20211022171916931.png">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-22 17:04:51 / Modified: 17:20:39" itemprop="dateCreated datePublished" datetime="2021-10-22T17:04:51+08:00">2021-10-22</time>
+              <time title="Created: 2021-10-22 17:04:51" itemprop="dateCreated datePublished" datetime="2021-10-22T17:04:51+08:00">2021-10-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-25 21:47:04" itemprop="dateModified" datetime="2021-10-25T21:47:04+08:00">2021-10-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -215,9 +221,9 @@
 <h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>系统环境如上图所示</p>
 <p>可以明显感受到在wayland下面窗口的动画效果流畅了很多。</p>
 <h2 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h2><p>不少程序已经原生支持wayland的了，要让他们完成切换，需要在<code>/etc/environment</code>中写入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">QT_QPA_PLATFORM=wayland</span><br><span class="line">SDL_VIDEODRIVER=wayland</span><br><span class="line">GDK_BACKEND=wayland</span><br><span class="line">CLUTTER_BACKEND=wayland</span><br><span class="line">MOZ_ENABLE_WAYLAND=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">QT_QPA_PLATFORM=wayland</span><br><span class="line">SDL_VIDEODRIVER=wayland</span><br><span class="line"># GDK_BACKEND=wayland</span><br><span class="line">CLUTTER_BACKEND=wayland</span><br><span class="line">MOZ_ENABLE_WAYLAND=1</span><br></pre></td></tr></table></figure>
 
-<p>这些选项分别让 QT GTK 等类别的程序使用wayland模式启动，如果不添加的话，默认就是在xwayland模式下启动。最后一行是让firefox在wayland模式下启动。</p>
+<p>这些选项分别让 QT GTK 等类别的程序使用wayland模式启动，如果不添加的话，默认就是在xwayland模式下启动(除了GTK)。最后一行是让firefox在wayland模式下启动。<code>GDK_BACKEND=wayland</code> 不建议启动，可以在wayland下启动的gtk程序默认会优先使用wayland,但是不能在wayland下启动的，也应该允许它们使用xwayland。</p>
 <p>对于electron类的应用，要在配置文件下面新建<code>electron-flags.conf</code>，在里面写入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--enable-features=UseOzonePlatform</span><br><span class="line">--ozone-platform=wayland</span><br></pre></td></tr></table></figure>
 
@@ -236,6 +242,8 @@
 <li>Log out之后黑屏，需要强制关机</li>
 <li>jetbrain burpsuite 这类java程序依旧需要xwayland 不过目前没有问题</li>
 <li>spectacle 截图不太正常</li>
+<li>偶尔剪切板会工作异常，比如firefox中复制的内容无法张贴到其他应用中，但是可以张贴在firefox内</li>
+<li>kwin设置的规则中，无法让程序记住自己退出时候的位置</li>
 </ul>
 <p>总之，很多的关键应用仍旧存在不影响使用的小问题，鉴于wayland是linux桌面环境的未来，我选择加入。</p>
 
@@ -273,7 +281,10 @@
     <a href="/2021/10/15/jdbc-unserialize/" rel="prev" title="mysql jdbc反序列化的不深入研究">
       <i class="fa fa-chevron-left"></i> mysql jdbc反序列化的不深入研究
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/13/GhostCat/" rel="next" title="GhostCat(CVE-2020-1938)漏洞学习">
+      GhostCat(CVE-2020-1938)漏洞学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -348,7 +359,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
