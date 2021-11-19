@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-11-13T09:36:11.377Z</updated>
+  <updated>2021-11-19T03:24:54.715Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论内卷化和Cyberpunk</title>
+    <link href="http://www.ch4ser.top/2021/11/19/Cyberpunk/"/>
+    <id>http://www.ch4ser.top/2021/11/19/Cyberpunk/</id>
+    <published>2021-11-19T03:18:11.000Z</published>
+    <updated>2021-11-19T03:24:54.715Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/Cyberpunk/0.jpeg&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="http://www.ch4ser.top/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>GhostCat(CVE-2020-1938)漏洞学习</title>
@@ -344,27 +361,6 @@
     
     
     <summary type="html">&lt;p&gt;php中的反序列化分为两类: 一种是常规ctf题目中的直接传入并反序列化, 另一种和session有关:&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>openssl笔记</title>
-    <link href="http://www.ch4ser.top/2019/09/01/openssl%E7%AC%94%E8%AE%B0/"/>
-    <id>http://www.ch4ser.top/2019/09/01/openssl%E7%AC%94%E8%AE%B0/</id>
-    <published>2019-09-01T07:23:10.000Z</published>
-    <updated>2021-10-16T06:17:56.236Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;信息提取&quot;&gt;&lt;a href=&quot;#信息提取&quot; class=&quot;headerlink&quot; title=&quot;信息提取&quot;&gt;&lt;/a&gt;信息提取&lt;/h2&gt;&lt;p&gt;生成一个包含密钥和公钥的文件,既可以用来加密也可以用来解密.&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;openssl genrsa -out target.key 1024&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;从这个包含公钥和私钥的文件中提取出公钥&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;openssl rsa -in target.key -pubout -out target_pub.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
