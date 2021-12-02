@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-02 14:24:23 / Modified: 14:40:36" itemprop="dateCreated datePublished" datetime="2021-12-02T14:24:23+08:00">2021-12-02</time>
+              <time title="Created: 2021-12-02 14:24:23 / Modified: 14:44:21" itemprop="dateCreated datePublished" datetime="2021-12-02T14:24:23+08:00">2021-12-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -204,39 +204,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>记录我在sway下遇到的问题和解决方法,有些问题和sway其实没什么关系</p>
-</blockquote>
-<h2 id="a-stoping-job-is-running-for-xxx-hangout"><a href="#a-stoping-job-is-running-for-xxx-hangout" class="headerlink" title="a stoping job is running for xxx hangout"></a>a stoping job is running for xxx hangout</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim /etc/systemd/system.conf</span><br><span class="line"></span><br><span class="line">DefaultTimeoutStopSec=5s</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="JAVA程序启动"><a href="#JAVA程序启动" class="headerlink" title="JAVA程序启动"></a>JAVA程序启动</h2><p>添加环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_JAVA_AWT_WM_NONREPARENTING=1</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="玩游戏"><a href="#玩游戏" class="headerlink" title="玩游戏"></a>玩游戏</h2><p>添加环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SDL_VIDEODRIVER=x11</span><br></pre></td></tr></table></figure>
-
-<h2 id="firefox缩小顶部高度"><a href="#firefox缩小顶部高度" class="headerlink" title="firefox缩小顶部高度"></a>firefox缩小顶部高度</h2><p>在<code>about:config</code>中设置<code>layout.css.devPixelsPerPx</code>为更小的值就可以了</p>
-<h2 id="waybar-在sway启动后很久才出现"><a href="#waybar-在sway启动后很久才出现" class="headerlink" title="waybar 在sway启动后很久才出现"></a>waybar 在sway启动后很久才出现</h2><p>sway配置中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec hash dbus-update-activation-environment 2&gt;/dev/null &amp;&amp; \</span><br><span class="line">	dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="sway-顶部栏出现中文后高度变化"><a href="#sway-顶部栏出现中文后高度变化" class="headerlink" title="sway 顶部栏出现中文后高度变化"></a>sway 顶部栏出现中文后高度变化</h2><p>在sway配置文件中添加以下设置来统一使用一个高高的字符的高度.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for_window [title=&quot;.*&quot;] title_format ゜%title゜</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="esc键和caplocks交换"><a href="#esc键和caplocks交换" class="headerlink" title="esc键和caplocks交换"></a>esc键和caplocks交换</h2><p>sway配置文件中添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input &quot;type:keyboard&quot; &#123;           </span><br><span class="line">    xkb_options caps:swapescape</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="GTK问题"><a href="#GTK问题" class="headerlink" title="GTK问题"></a>GTK问题</h2><p>不要在环境变量中设置<code>GDK_BACKEND=wayland</code>, GTK程序会自动优先选择wayland,如果不行会自动切换到xwayland</p>
-
+          <p><img src="/images/SwayTrouble/image-20211202144358861.png" alt="image-20211202144358861"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/02/SwayTrouble/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
