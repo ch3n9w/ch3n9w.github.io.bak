@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>ch4ser||自闭室</title>
+  <title>ch4ser||超元域</title>
   <icon>http://www.ch4ser.top/icon.png</icon>
   <subtitle>(´・ω・｀)你瞅啥呢</subtitle>
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-12-02T13:14:19.233Z</updated>
+  <updated>2021-12-03T02:24:43.979Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.ch4ser.top/2021/12/02/SwayTrouble/"/>
     <id>http://www.ch4ser.top/2021/12/02/SwayTrouble/</id>
     <published>2021-12-02T06:24:23.000Z</published>
-    <updated>2021-12-02T13:14:19.233Z</updated>
+    <updated>2021-12-03T02:24:43.979Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/SwayTrouble/image-20211202211403307.png&quot; alt=&quot;image-20211202211403307&quot;&gt;&lt;/p&gt;</summary>
