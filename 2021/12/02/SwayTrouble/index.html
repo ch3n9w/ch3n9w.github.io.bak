@@ -23,13 +23,13 @@
   </script>
 
   <meta property="og:type" content="article">
-<meta property="og:title" content="Sway的日常">
+<meta property="og:title" content="Arch Sway的日常">
 <meta property="og:url" content="http://www.ch4ser.top/2021/12/02/SwayTrouble/index.html">
 <meta property="og:site_name" content="ch4ser||超元域">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://www.ch4ser.top/images/SwayTrouble/image-20211202211403307.png">
 <meta property="article:published_time" content="2021-12-02T06:24:23.000Z">
-<meta property="article:modified_time" content="2021-12-03T02:24:43.979Z">
+<meta property="article:modified_time" content="2021-12-11T05:41:54.414Z">
 <meta property="article:author" content="ch4ser">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.ch4ser.top/images/SwayTrouble/image-20211202211403307.png">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Sway的日常 | ch4ser||超元域</title>
+  <title>Arch Sway的日常 | ch4ser||超元域</title>
   
 
 
@@ -172,7 +172,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Sway的日常
+          Arch Sway的日常
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-03 10:24:43" itemprop="dateModified" datetime="2021-12-03T10:24:43+08:00">2021-12-03</time>
+                <time title="Modified: 2021-12-11 13:41:54" itemprop="dateModified" datetime="2021-12-11T13:41:54+08:00">2021-12-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -216,7 +216,7 @@
 <span id="more"></span>
 
 <blockquote>
-<p>记录我在sway下遇到的问题和解决方法,有些问题和sway其实没什么关系</p>
+<p>记录我在arch linux sway下遇到的问题和解决方法</p>
 </blockquote>
 <h2 id="a-stoping-job-is-running-for-xxx-hangout"><a href="#a-stoping-job-is-running-for-xxx-hangout" class="headerlink" title="a stoping job is running for xxx hangout"></a>a stoping job is running for xxx hangout</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim /etc/systemd/system.conf</span><br><span class="line"></span><br><span class="line">DefaultTimeoutStopSec=5s</span><br></pre></td></tr></table></figure>
 
@@ -247,7 +247,12 @@
 
 
 <h2 id="GTK问题"><a href="#GTK问题" class="headerlink" title="GTK问题"></a>GTK问题</h2><p>不要在环境变量中设置<code>GDK_BACKEND=wayland</code>, GTK程序会自动优先选择wayland,如果不行会自动切换到xwayland</p>
-<h2 id="error-GPGME-error-No-data"><a href="#error-GPGME-error-No-data" class="headerlink" title="error: GPGME error: No data"></a>error: GPGME error: No data</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -f /var/lib/pacman/sync/*</span><br><span class="line">sudo pacm</span><br></pre></td></tr></table></figure>
+<h2 id="error-GPGME-error-No-data"><a href="#error-GPGME-error-No-data" class="headerlink" title="error: GPGME error: No data"></a>error: GPGME error: No data</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -f /var/lib/pacman/sync/*</span><br><span class="line">sudo pacman -Sc</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="软件包版本降低"><a href="#软件包版本降低" class="headerlink" title="软件包版本降低"></a>软件包版本降低</h2><p>如果是pacman 下载的包, 使用<code>downgrade</code>软件来进行版本降低, 如果是aur下载的包, 那么进入aur, 找到要降级的软件包, 点击<code>View Changes</code> , 进入后选择特定的change然后下载软件包, 解压后执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">makepkg -scri</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -264,7 +269,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://www.ch4ser.top/2021/12/02/SwayTrouble/" title="Sway的日常">http://www.ch4ser.top/2021/12/02/SwayTrouble/</a>
+    <a href="http://www.ch4ser.top/2021/12/02/SwayTrouble/" title="Arch Sway的日常">http://www.ch4ser.top/2021/12/02/SwayTrouble/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -284,7 +289,10 @@
     <a href="/2021/11/19/Cyberpunk/" rel="prev" title="论内卷化和Cyberpunk">
       <i class="fa fa-chevron-left"></i> 论内卷化和Cyberpunk
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/11/log4j2-jndi/" rel="next" title="log4j2 jndi 漏洞学习和调试">
+      log4j2 jndi 漏洞学习和调试 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -343,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-stoping-job-is-running-for-xxx-hangout"><span class="nav-number">1.</span> <span class="nav-text">a stoping job is running for xxx hangout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">JAVA程序启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E6%B8%B8%E6%88%8F"><span class="nav-number">3.</span> <span class="nav-text">玩游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#firefox%E7%BC%A9%E5%B0%8F%E9%A1%B6%E9%83%A8%E9%AB%98%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">firefox缩小顶部高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#waybar-%E5%9C%A8sway%E5%90%AF%E5%8A%A8%E5%90%8E%E5%BE%88%E4%B9%85%E6%89%8D%E5%87%BA%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">waybar 在sway启动后很久才出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sway-%E9%A1%B6%E9%83%A8%E6%A0%8F%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E5%90%8E%E9%AB%98%E5%BA%A6%E5%8F%98%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">sway 顶部栏出现中文后高度变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#esc%E9%94%AE%E5%92%8Ccaplocks%E4%BA%A4%E6%8D%A2"><span class="nav-number">7.</span> <span class="nav-text">esc键和caplocks交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GTK%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">GTK问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-GPGME-error-No-data"><span class="nav-number">9.</span> <span class="nav-text">error: GPGME error: No data</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-stoping-job-is-running-for-xxx-hangout"><span class="nav-number">1.</span> <span class="nav-text">a stoping job is running for xxx hangout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">JAVA程序启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E6%B8%B8%E6%88%8F"><span class="nav-number">3.</span> <span class="nav-text">玩游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#firefox%E7%BC%A9%E5%B0%8F%E9%A1%B6%E9%83%A8%E9%AB%98%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">firefox缩小顶部高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#waybar-%E5%9C%A8sway%E5%90%AF%E5%8A%A8%E5%90%8E%E5%BE%88%E4%B9%85%E6%89%8D%E5%87%BA%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">waybar 在sway启动后很久才出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sway-%E9%A1%B6%E9%83%A8%E6%A0%8F%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E5%90%8E%E9%AB%98%E5%BA%A6%E5%8F%98%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">sway 顶部栏出现中文后高度变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#esc%E9%94%AE%E5%92%8Ccaplocks%E4%BA%A4%E6%8D%A2"><span class="nav-number">7.</span> <span class="nav-text">esc键和caplocks交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GTK%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">GTK问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-GPGME-error-No-data"><span class="nav-number">9.</span> <span class="nav-text">error: GPGME error: No data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%89%88%E6%9C%AC%E9%99%8D%E4%BD%8E"><span class="nav-number">10.</span> <span class="nav-text">软件包版本降低</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -359,7 +367,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-12-03T02:24:43.979Z</updated>
+  <updated>2021-12-11T08:36:45.759Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Sway的日常</title>
+    <title>log4j2 jndi 漏洞学习和调试</title>
+    <link href="http://www.ch4ser.top/2021/12/11/log4j2-jndi/"/>
+    <id>http://www.ch4ser.top/2021/12/11/log4j2-jndi/</id>
+    <published>2021-12-11T06:56:51.000Z</published>
+    <updated>2021-12-11T08:36:45.759Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;及时学习&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Arch Sway的日常</title>
     <link href="http://www.ch4ser.top/2021/12/02/SwayTrouble/"/>
     <id>http://www.ch4ser.top/2021/12/02/SwayTrouble/</id>
     <published>2021-12-02T06:24:23.000Z</published>
-    <updated>2021-12-03T02:24:43.979Z</updated>
+    <updated>2021-12-11T05:41:54.414Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/SwayTrouble/image-20211202211403307.png&quot; alt=&quot;image-20211202211403307&quot;&gt;&lt;/p&gt;</summary>
@@ -344,23 +363,6 @@
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/RoarCTFwp/image-20211114142019085.png&quot; alt=&quot;image-20211114142019085&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>bytectf2019</title>
-    <link href="http://www.ch4ser.top/2019/09/09/bytectf2019/"/>
-    <id>http://www.ch4ser.top/2019/09/09/bytectf2019/</id>
-    <published>2019-09-09T00:18:25.000Z</published>
-    <updated>2021-11-14T06:11:03.251Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/bytectf2019/image-20211114141103041.png&quot; alt=&quot;image-20211114141103041&quot;&gt;&lt;/p&gt;</summary>
     
     
     
