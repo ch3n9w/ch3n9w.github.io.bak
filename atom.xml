@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2021-12-11T08:52:48.150Z</updated>
+  <updated>2022-01-20T07:53:08.553Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>thinkphp5漏洞学习</title>
+    <link href="http://www.ch4ser.top/2022/01/14/phpggc-thinkphp/"/>
+    <id>http://www.ch4ser.top/2022/01/14/phpggc-thinkphp/</id>
+    <published>2022-01-14T14:19:13.000Z</published>
+    <updated>2022-01-20T07:53:08.553Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;phpggc中关于thinkphp的攻击思路学习&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>log4j2 jndi 漏洞学习和调试</title>
@@ -350,23 +369,6 @@
     
     
     <category term="安全研究" scheme="http://www.ch4ser.top/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>RoarCTF 2019复现</title>
-    <link href="http://www.ch4ser.top/2019/10/22/RoarCTFwp/"/>
-    <id>http://www.ch4ser.top/2019/10/22/RoarCTFwp/</id>
-    <published>2019-10-22T00:32:09.000Z</published>
-    <updated>2021-11-14T06:20:48.186Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/RoarCTFwp/image-20211114142019085.png&quot; alt=&quot;image-20211114142019085&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
     
     
   </entry>
