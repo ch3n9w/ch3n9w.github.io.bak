@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2022-01-27T03:24:47.888Z</updated>
+  <updated>2022-01-27T03:26:56.458Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://www.ch4ser.top/2022/01/22/shiro-attack/"/>
     <id>http://www.ch4ser.top/2022/01/22/shiro-attack/</id>
     <published>2022-01-22T02:52:46.000Z</published>
-    <updated>2022-01-27T03:24:47.888Z</updated>
+    <updated>2022-01-27T03:26:56.458Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;记录shiro漏洞学习的过程, 参考&lt;a</summary>
-        
-      
+&lt;p&gt;记录shiro漏洞学习的过程, 参考&lt;a href=&quot;https://saucer-man.com/information_security/396.html&quot;&gt;https://saucer-man.com/information_security/396.html&lt;/a&gt;, 并在漏洞分析基础上编写检测脚本&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
