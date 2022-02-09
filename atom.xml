@@ -34,21 +34,14 @@
   </entry>
   
   <entry>
-    <title>pwnable</title>
+    <title>pwnable尝试[持续更新]</title>
     <link href="http://www.ch4ser.top/2022/01/27/pwnable/"/>
     <id>http://www.ch4ser.top/2022/01/27/pwnable/</id>
     <published>2022-01-27T09:48:33.000Z</published>
-    <updated>2022-01-28T13:51:40.924Z</updated>
+    <updated>2022-02-09T08:20:53.927Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;start&quot;&gt;&lt;a href=&quot;#start&quot; class=&quot;headerlink&quot; title=&quot;start&quot;&gt;&lt;/a&gt;start&lt;/h2&gt;&lt;p&gt;下载, 反编译获得如下代码&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
+    <summary type="html">&lt;p&gt;尝试学pwn,放弃学pwn&lt;/p&gt;</summary>
     
     
     
