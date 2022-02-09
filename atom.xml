@@ -6,7 +6,7 @@
   <link href="http://www.ch4ser.top/atom.xml" rel="self"/>
   
   <link href="http://www.ch4ser.top/"/>
-  <updated>2022-01-27T03:26:56.458Z</updated>
+  <updated>2022-02-09T08:14:43.135Z</updated>
   <id>http://www.ch4ser.top/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2021年度总结</title>
+    <link href="http://www.ch4ser.top/2022/02/09/2021-summery/"/>
+    <id>http://www.ch4ser.top/2022/02/09/2021-summery/</id>
+    <published>2022-02-09T08:12:20.000Z</published>
+    <updated>2022-02-09T08:14:43.135Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这是一篇拖延了很久的年度总结,在下决心写它的时候,我已经从过年开始无所事事地玩了十几天的游戏了,本来说好要在过年那天写的总结也一直到现在才开始动笔,着实是惭愧.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="碎碎念" scheme="http://www.ch4ser.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pwnable</title>
+    <link href="http://www.ch4ser.top/2022/01/27/pwnable/"/>
+    <id>http://www.ch4ser.top/2022/01/27/pwnable/</id>
+    <published>2022-01-27T09:48:33.000Z</published>
+    <updated>2022-01-28T13:51:40.924Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;start&quot;&gt;&lt;a href=&quot;#start&quot; class=&quot;headerlink&quot; title=&quot;start&quot;&gt;&lt;/a&gt;start&lt;/h2&gt;&lt;p&gt;下载, 反编译获得如下代码&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>shiro 漏洞复现</title>
@@ -330,43 +371,6 @@
     
     
     <summary type="html">&lt;p&gt;开一个新坑~~&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LD_PRELOAD劫持类型题目</title>
-    <link href="http://www.ch4ser.top/2019/12/26/LD-PRELOAD%E5%8A%AB%E6%8C%81%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/"/>
-    <id>http://www.ch4ser.top/2019/12/26/LD-PRELOAD%E5%8A%AB%E6%8C%81%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/</id>
-    <published>2019-12-26T08:37:19.000Z</published>
-    <updated>2021-11-14T06:18:17.147Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;贴几个参考链接&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/wfzWebSecuity/p/11213732.html&quot;&gt;https://www.cnblogs.com/wfzWebSecuity/p/11213732.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/yangyangwithgnu/bypass_disablefunc_via_LD_PRELOAD&quot;&gt;https://github.com/yangyangwithgnu/bypass_disablefunc_via_LD_PRELOAD&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="做题" scheme="http://www.ch4ser.top/categories/%E5%81%9A%E9%A2%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>copperstudy-record</title>
-    <link href="http://www.ch4ser.top/2019/12/19/qwb-copperstudy-record/"/>
-    <id>http://www.ch4ser.top/2019/12/19/qwb-copperstudy-record/</id>
-    <published>2019-12-19T12:51:05.000Z</published>
-    <updated>2021-11-14T06:19:51.646Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;强网杯-2019-copperstudy&quot;&gt;&lt;a href=&quot;#强网杯-2019-copperstudy&quot; class=&quot;headerlink&quot; title=&quot;强网杯 2019 copperstudy&quot;&gt;&lt;/a&gt;强网杯 2019 copperstudy&lt;/h2&gt;&lt;p&gt;拖拖拉拉终于把这题复现了…&lt;/p&gt;
-&lt;p&gt;开局计算哈希, 爆破爆破&lt;/p&gt;</summary>
     
     
     
