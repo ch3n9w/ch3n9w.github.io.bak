@@ -19,32 +19,32 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.ch4ser.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"ch4ser.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="padding oracle 原理: https:&#x2F;&#x2F;www.freebuf.com&#x2F;articles&#x2F;database&#x2F;150606.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="padding_oracle 和 cbc字节反转">
-<meta property="og:url" content="http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/index.html">
+<meta property="og:url" content="https://ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/index.html">
 <meta property="og:site_name" content="ch4ser||超元域">
 <meta property="og:description" content="padding oracle 原理: https:&#x2F;&#x2F;www.freebuf.com&#x2F;articles&#x2F;database&#x2F;150606.html">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141832885.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/image-20200203003409598.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/image-20200203004257291.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/15078975303136.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/15078976262418.png!small">
-<meta property="og:image" content="http://www.ch4ser.top/images/15078975303136.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/image-20200202225510224.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/image-20200203014414962.png">
-<meta property="og:image" content="http://www.ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141845867.png">
+<meta property="og:image" content="https://ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141832885.png">
+<meta property="og:image" content="https://ch4ser.top/images/image-20200203003409598.png">
+<meta property="og:image" content="https://ch4ser.top/images/image-20200203004257291.png">
+<meta property="og:image" content="https://ch4ser.top/images/15078975303136.png">
+<meta property="og:image" content="https://ch4ser.top/images/15078976262418.png!small">
+<meta property="og:image" content="https://ch4ser.top/images/15078975303136.png">
+<meta property="og:image" content="https://ch4ser.top/images/image-20200202225510224.png">
+<meta property="og:image" content="https://ch4ser.top/images/image-20200203014414962.png">
+<meta property="og:image" content="https://ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141845867.png">
 <meta property="article:published_time" content="2020-02-03T08:42:20.000Z">
 <meta property="article:modified_time" content="2021-11-14T06:18:45.923Z">
 <meta property="article:author" content="ch4ser">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141832885.png">
+<meta name="twitter:image" content="https://ch4ser.top/images/padding-oracle-and-cbc-attack/image-20211114141832885.png">
 
-<link rel="canonical" href="http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/">
+<link rel="canonical" href="https://ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/">
 
 
 <script id="page-configurations">
@@ -169,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/">
+    <link itemprop="mainEntityOfPage" href="https://ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/sabito.jpg">
@@ -332,7 +332,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/" title="padding_oracle 和 cbc字节反转">http://www.ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/</a>
+    <a href="https://ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/" title="padding_oracle 和 cbc字节反转">https://ch4ser.top/2020/02/03/padding-oracle-and-cbc-attack/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
